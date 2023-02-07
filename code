@@ -1,0 +1,25 @@
+class Solution{
+  public:
+    vector<int> duplicates(int arr[], int n) {
+        vector<int>dup;
+        
+        for(int i=0;i<n-1;i++){
+            int count=0;
+            for(int j=i+1;j<n;j++){
+                if(arr[i]==arr[j])
+               {
+                   auto it=find(dup.begin(),dup.end(),arr[i]);
+               
+               if(it!=dup.end())
+               break;
+               else dup.push_back(arr[i]);
+            }
+            
+            }
+        }
+        sort(dup.begin(),dup.end());
+      if(dup.empty()==true)
+      return {-1};
+    else return dup;
+    }
+};
